@@ -1,38 +1,341 @@
-.App {
-  text-align: center;
+/* RESET CSS CODE 
+A CSS Reset is used to remove the default browser styling and make the website look same on all browsers
+*/
+
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
 }
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  line-break: after-white-space;
+  ;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+/*--------------------------Reset CSS code-----------------------------------------------------*/
+
+
+
+
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: lightblue;
+  text-align: right;
+  font-size: calc(5px + 2vmin);
+  color: black;
+}
+
+#navv:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.restaurantCard {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  height: fit-content !important;
+  width: 250px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.restaurantCard:hover {
+  background-color: #e0e0e0;
+}
+
+.quick-view {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.restaurantCard:hover .quick-view {
+  display: contents;
+}
+
+#Sbutton {
+  color: white;
+  background-color: orange;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+#inp {
+
+  margin-top: 25px;
+  margin-left: 8px;
+  justify-content: end;
+  height: 35px;
+  width: 35%;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 10px;
+
+}
+
+#collapsibleNavbar {
+  justify-content: end;
+
+}
+
+.newclass {
+  text-align: center;
+}
+
+.wel {
+
+  text-align: center;
+  margin-top: 100px;
+}
+
+.paragraph{
+
+    font-size:20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#log {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 50px;
+  height: 600px;
+  width: 400px;
+  padding:10px;
+  font-family: "ColfaxAI", -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#but {
+
+  text-align: center;
+
+}
+
+.bar1 {
+
+  margin-top: 600px;
+  margin-left: 15px;
+  background-color: black;
+  height: 200px;
+  width: 100%;
+
+}
+
+.register {
+
+  height: 500px;
+  width: 500px;
+  border: 1px solid #ccc;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .register {
+    width: 100%;
+    /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color:rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  to {
-    transform: rotate(360deg);
+
+  #log {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
+
+#footerdiv{
+
+  height:200px;
+  width:100%;
+  background-color: rgb(43, 41, 41);
+  color:white;
+  text-align:center;
+  padding:40px;
+  margin-top:1000px;
+}
+
+#DescriptionBox
+{
+  border:1px solid red;
+
+}
+.breakdiv{
+  height:150px;
+  width:100%;
+  background: linear-gradient(135deg, #b8c579, #833ab4, #13547a);
+  
+}
+.highlight{
+
+  font-size:20px;
+  color:red;
+  font-weight: 500;
+  font-style:italic;
+}
+#abtfoody{
+  font-style:italic;
+  color:grey;
+}
+.carousel-text
+{
+  font-size:30px;
+  font-style:italic;
+  font-weight: 500; 
+  color:red;
+
+}
+.social-link{
+  border:1px solid #ccc;
+  border-radius:15px;
+}
+.social-link:hover{
+  height:60px;
+  width:60px;
+}
+.Backg {
+  width:100%;
+  background: linear-gradient(135deg, #b8c579 #833ab4, #13547a);
+  z-index: -1;
+}
+
+.breakdiv{
+  color:white;
+  text-align: center;
+  padding: 20px;
+}
+#message , #email , #name{
+  text-align: left;
+}
+
+/*
+.error-message1
+{
+  font-size:25px;
+}
+.error-message2
+{
+  font-size:25px;
+}
+.error-message3
+{
+  font-size:25px;
+}
+.error-message4
+{
+  font-size:25px;
+}
+*/

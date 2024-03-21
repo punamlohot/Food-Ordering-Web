@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+//import MyClass from "./newClass";
+//import About from "./Components/About";
+//import ContactUs from "./Contact";
 import './App.css';
+import AppHeader from './Components/AppHeader';
+//import Body from './Components/Appbody';
+import { Outlet } from 'react-router-dom';
+import Footer from './Components/Footer';
+//import Login from './Components/Login';
+//import Instamart from './Components/Instamart'
+//import Routing from './Components/Routing';
+//import Test from './Components/Test';
+//import UserContext from './Utilities/UserContext';
+//import { Provider } from "react-redux";
+//import Mystore from "../Redux/Store";
 
 function App() {
   return (
+    <>
+    {/* <Provider Store = {Mystore}> */}
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AppHeader/>
+    <Outlet/>
+    <Footer/>
+    {/*<Instamart/>
+    <Login/>
+     <Body/>
+    */}
     </div>
-  );
-}
+    {/* </Provider> */}
+    </>
+  )
+  
+};
 
 export default App;

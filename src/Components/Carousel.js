@@ -19,7 +19,7 @@ const CarouselComponent = () => {
       </div>
       <div className="carousel-slide">
         <img
-          src="https://www.fresconews.com/wp-content/uploads/2020/05/images1401-5ec4e2fbe2d26.jpg"
+          src="http://www.pngmart.com/files/7/Delivery-PNG-HD.png"
           alt="rest-2"
           height="500px"
         />
